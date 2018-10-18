@@ -16,7 +16,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(logToFile);
 app.use(logToConsole);
 
 app.use('/api/arduino', arduinoRouter);
