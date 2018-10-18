@@ -3,7 +3,13 @@ services:
   api:
     build:
       context: .
-      dockerfile: ./docker/dev/Dockerfile
+      dockerfile: ./docker/prod/Dockerfile
+    environment:
+      - NODE_ENV=production
+      - NODE_PORT=3000
+      - MONGO_URL=mongodb://root:root@mongo:27017/admin
+      - JWT_SECRET=paqH3IUuSRPmInFiSNBagzcnxZyTtUTa
+      - MONGO_DATABASE=solus
     ports:
       - "3000:3000"
     expose:

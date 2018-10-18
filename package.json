@@ -6,7 +6,7 @@
   "scripts": {
     "build": "./node_modules/typescript/bin/tsc",
     "dev": "tsc && concurrently \"nodemon\" \"tsc -w --preserveWatchOutput\" ",
-    "prod": "yarn build && yarn prod",
+    "prod": "yarn build",
     "start": "node ./dist/server.js"
   },
   "dependencies": {
