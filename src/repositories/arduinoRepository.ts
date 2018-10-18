@@ -15,7 +15,6 @@ export const update = async(id: string, arduino: IArduinoModel) => {
 
 export const save = async (arduino: IArduinoModel, id: string = null) => {
   if(id) {
-    // update model
     return await update(id, arduino)
   }
 
@@ -28,9 +27,9 @@ export const list = async () => await Arduino.find({}, {
   'measures': false
 }).exec()
 
-export const get = async (id) => {
+export const get = async (id, measures = false) => {
   const arduino = await Arduino.findById(id, {
-    'measures': false
+    'measures': measures
   }).exec()
 
   if(!arduino) {

@@ -6,6 +6,7 @@ export interface IMeasureModel extends IMeasure, Document {
 }
 
 export var MeasureSchema: Schema = new Schema({
+  arduino: { type: Schema.Types.ObjectId, ref: 'Arduino' },  
   uvRay: Number,
   rainfall: Number,
   soilMoisture: Number,

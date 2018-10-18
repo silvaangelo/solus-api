@@ -1,5 +1,5 @@
 export class BaseError extends Error {
-  httpCode: number
+  public httpCode: number
 
   constructor(message: string, httpCode: number = 500) {
     super(message)

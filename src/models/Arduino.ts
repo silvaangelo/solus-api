@@ -1,4 +1,3 @@
-import { MeasureSchema } from './Measure';
 import { IArduino } from '../interfaces/IArduino'
 import { Document, Schema, Model, model } from 'mongoose'
 
@@ -7,9 +6,9 @@ export interface IArduinoModel extends IArduino, Document {
 }
 
 export var ArduinoSchema: Schema = new Schema({
+    measures: [{ type: Schema.Types.ObjectId, ref: 'Measure' }],
     name: String,
     location: String,
-    measures: [MeasureSchema],
     createdAt: Date,
     updatedAt: Date
 })

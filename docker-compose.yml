@@ -14,12 +14,7 @@ services:
       - mongo:mongo
     depends_on:
       - mongo
-    environment:
-      - NODE_ENV=production
-      - NODE_PORT=3000
-      - MONGO_URL=mongodb://root:root@mongo:27017/admin
-      - MONGO_DATABASE=solus 
-
+      
   mongo:
     image: mongo:latest
     volumes:
