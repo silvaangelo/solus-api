@@ -2,7 +2,6 @@ import './env';
 import './db';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
-import { logToFile } from './lib/http-logger';
 import { logToConsole } from './lib/http-logger';
 import arduinoRouter from './routes/arduinoRouter';
 import measureRouter from './routes/measureRouter';
