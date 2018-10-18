@@ -1,4 +1,3 @@
-import * as morgan from 'morgan'
+import * as morgan from 'morgan';
 
-export const logToConsole = morgan('dev')
-
+export const logToConsole = morgan('dev');

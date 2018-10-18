@@ -42,7 +42,7 @@ const ensureAuthenticated = (req, res, next) => {
     
     req.user = payload.data;
   
-    return setTimeout(() => next(), 800);
+    return next();
   } catch (err) {
     return next(err);
   }
