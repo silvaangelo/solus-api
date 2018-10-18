@@ -1,4 +1,4 @@
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs'
 import { User } from '../models/User';
 import { validationResult } from 'express-validator/check';
 import { save, list as getAll, get as retrieve, remove as removeFromDatabase } from '../repositories/userRepository';
