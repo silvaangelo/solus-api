@@ -7,6 +7,11 @@ Este repositório contem a api do TCC, caso você queira visualizar a documenta�
 
 [https://github.com/r6d6/solus](https://github.com/r6d6/solus-doc)
 
+## Outros repositórios do projeto podem ser conferidos abaixo:
+
+- [Front end](https://github.com/silvaangelo/solus-front)
+- [Documentação](https://github.com/silvaangelo/solus-doc)
+
 ## Receita
 
 Certifique-se de que você possui o node:10 e o docker instalado em sua máquina com o docker-compose instalado.
