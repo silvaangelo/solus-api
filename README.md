@@ -1,4 +1,4 @@
-# solus-api
+# SOLUS | API
 
 Solus é uma aplicação desenvolvida como trabalho de conclusão de curso para Análise e Desenvolvimento de Sistemas no IFSP Câmpus Boituva.
 O objetivo do projeto é realizar a análise estatística de dados meteorológicos, capturados através de sensores ligados a um microcontrolador arduino.
@@ -9,21 +9,12 @@ Este repositório contem a api do TCC, caso você queira visualizar a documenta�
 
 ## Receita
 
-Certifique-se de que você possui o php instalado com as dependências:
+Certifique-se de que você possui o node:10 e o docker instalado em sua máquina com o docker-compose instalado.
 
-- PHP >= 7.1.3
-- OpenSSL PHP Extension
-- PDO PHP Extension
-- Mbstring PHP Extension
-
-Instale as dependências com o comando:
+Simplesmente rode o comando
 
 ```
-composer install
+docker-compose up
 ```
 
-Você pode rodar a api utilizando o servidor embutido do php:
-
-```
-php -S localhost:8000 -t public
-```
+E o a api será iniciada na localização **http://localhost:3000/api**
