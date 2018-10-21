@@ -4,10 +4,10 @@ export interface IMeasure {
   arduino: IArduinoModel
   uvRay: Number
   rainfall: Number
-  soilMoisture: Number
-  airMoisture: Number
-  temperature: Number
-  arduinoTemperature: Number
+  sunCapability: Number
+  humidity: Number
+  ambienceTemperature: Number
+  temperatureHumidity: Number
   createdAt: Date
-  sunlight: Number
+  lightIntensity: Number
 }

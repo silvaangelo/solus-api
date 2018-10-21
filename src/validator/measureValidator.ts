@@ -2,48 +2,48 @@ import { body } from 'express-validator/check'
 
 const arduinoIdRule = body('arduinoId').exists().isMongoId()
 
+const humidityRule = body('humidity').exists().isFloat({
+  min: 0,
+  max: 100
+});
+
+const temperatureHumidityRule = body('temperatureHumidity').exists().isFloat({
+  min: -100,
+  max: 100
+});
+
+const ambienceTemperatureRule = body('ambienceTemperature').exists().isFloat({
+  min: -100,
+  max: 100
+});
+
+const lightIntensityRule = body('lightIntensity').exists().isFloat({
+  min: 0,
+  max: 2000
+});
+
 const uvRayRule = body('uvRay').exists().isFloat({
   min: 0,
-  max: 20
+  max: 2000
 })
 
 const rainfallRule = body('rainfall').exists().isFloat({
   min: 0,
-  max: 10
+  max: 2000
 })
 
-const soilMoistureRule = body('soilMoisture').exists().isFloat({
+const sunCapabilityRule = body('sunCapability').exists().isFloat({
   min: 0,
-  max: 1024
-})
-
-const airMoistureRule = body('airMoisture').exists().isFloat({
-  min: 0,
-  max: 100
-})
-
-const temperatureRule = body('temperature').exists().isFloat({
-  min: -100,
-  max: 100
-})
-
-const arduinoTemperatureRule = body('arduinoTemperature').exists().isFloat({
-  min: -100,
-  max: 100
-})
-
-const sunlightRule = body('sunlight').exists().isFloat({
-  min: 0,
-  max: 1024
+  max: 2000
 })
 
 export const createRules = [
   arduinoIdRule,
   uvRayRule,
   rainfallRule,
-  soilMoistureRule,
-  airMoistureRule,
-  temperatureRule,
-  arduinoTemperatureRule,
-  sunlightRule
+  sunCapabilityRule,
+  humidityRule,
+  ambienceTemperatureRule,
+  temperatureHumidityRule,
+  lightIntensityRule
 ]

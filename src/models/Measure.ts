@@ -9,11 +9,11 @@ export var MeasureSchema: Schema = new Schema({
   arduino: { type: Schema.Types.ObjectId, ref: 'Arduino' },  
   uvRay: Number,
   rainfall: Number,
-  soilMoisture: Number,
-  airMoisture: Number,
-  temperature: Number,
-  arduinoTemperature: Number,
-  sunlight: Number,
+  sunCapability: Number,
+  humidity: Number,
+  ambienceTemperature: Number,
+  temperatureHumidity: Number,
+  lightIntensity: Number,
   createdAt: Date
 })
 
