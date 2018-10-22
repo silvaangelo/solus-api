@@ -32,7 +32,7 @@ export const getMillisecondsFrom = (interval: string) => {
   return Number.parseInt(cleanedInterval.slice(0, -1)) * bigMeasuresAsMiliseconds[cleanedInterval.slice(-1)]
 }
 
-export const get = async (arduinoId: string, interval: string, skip: Number = 0, limit: Number = 25, from?: Date, to?: Date) => {
+export const get = async (arduinoId: string, interval: string, from?: Date, to?: Date) => {
   const arduino = await getArduino(arduinoId, true)
 
   return await Measure.aggregate([
@@ -46,16 +46,28 @@ export const get = async (arduinoId: string, interval: string, skip: Number = 0,
           ]
         }
       },
-      uvRay: {$avg:"$uvRay"},
-      rainfall: {$avg:"$rainfall"},
-      sunCapability: {$avg:"$sunCapability"},
-      humidity: {$avg:"$humidity"},
-      ambienceTemperature: {$avg:"$ambienceTemperature"},
-      temperatureHumidity: {$avg:"$temperatureHumidity"},
-      lightIntensity: {$avg:"$lightIntensity"}
+      uvRay: {$avg: "$uvRay"},
+      rainfall: {$avg: "$rainfall"},
+      sunCapability: {$avg: "$sunCapability"},
+      humidity: {$avg: "$humidity"},
+      ambienceTemperature: {$avg: "$ambienceTemperature"},
+      temperatureHumidity: {$avg: "$temperatureHumidity"},
+      lightIntensity: {$avg: "$lightIntensity"},
+      maxUvRay: {$max: "$uvRay"},
+      maxRainfall: {$max: "$rainfall"},
+      maxSunCapability: {$max: "$sunCapability"},
+      maxHumidity: {$max: "$humidity"},
+      maxAmbienceTemperature: {$max: "$ambienceTemperature"},
+      maxTemperatureHumidity: {$max: "$temperatureHumidity"},
+      maxLightIntensity: {$max: "$lightIntensity"},
+      minUvRay: {$min: "$uvRay"},
+      minRainfall: {$min: "$rainfall"},
+      minSunCapability: {$min: "$sunCapability"},
+      minHumidity: {$min: "$humidity"},
+      minAmbienceTemperature: {$min: "$ambienceTemperature"},
+      minTemperatureHumidity: {$min: "$temperatureHumidity"},
+      minLightIntensity: {$min: "$lightIntensity"}
     }},
-    {$sort: {createdAt: -1}},
-    {$skip: skip},
-    {$limit: limit}
+    {$sort: {createdAt: -1}}
   ])
 }
