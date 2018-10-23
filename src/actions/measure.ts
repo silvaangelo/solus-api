@@ -15,10 +15,11 @@ export const create = async (req, res, next) => {
 
     const measure = new Measure(req.body);
 
+    save(measure, req.body.arduinoId);
+
     return res.json({
-      success: true,
-      data: await save(measure, req.body.arduinoId)
-    })
+      success: true
+    });
   } catch(err) {
     next(err)
   }
