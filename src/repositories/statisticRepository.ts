@@ -20,13 +20,13 @@ export const findWhereArduinoAndRangeWithProjectAndSort = (arduinoId: string, fr
 
 export const getMin = async (arduinoId: string, from: Date, to: Date) => {
   const data = await Promise.all([
-    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {uvRay: 1}, {uvRay: +1}),
-    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {rainfall: 1}, {rainfall: -1}),
-    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {sunCapability: 1}, {sunCapability: +1}),
-    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {humidity: 1}, {humidity: +1}),
-    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {ambienceTemperature: 1}, {ambienceTemperature: +1}),
-    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {temperatureHumidity: 1}, {temperatureHumidity: +1}),
-    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {lightIntensity: 1}, {lightIntensity: -1}),
+    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {uvRay: 1}, {uvRay: 1}),
+    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {rainfall: 1}, {rainfall: 1}),
+    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {sunCapability: 1}, {sunCapability: 1}),
+    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {humidity: 1}, {humidity: 1}),
+    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {ambienceTemperature: 1}, {ambienceTemperature: 1}),
+    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {temperatureHumidity: 1}, {temperatureHumidity: 1}),
+    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {lightIntensity: 1}, {lightIntensity: 1}),
   ]);
 
   return {
@@ -43,12 +43,12 @@ export const getMin = async (arduinoId: string, from: Date, to: Date) => {
 export const getMax = async (arduinoId: string, from: Date, to: Date) => {
   const data = await Promise.all([
     findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {uvRay: 1}, {uvRay: -1}),
-    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {rainfall: 1}, {rainfall: +1}),
+    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {rainfall: 1}, {rainfall: -1}),
     findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {sunCapability: 1}, {sunCapability: -1}),
     findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {humidity: 1}, {humidity: -1}),
     findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {ambienceTemperature: 1}, {ambienceTemperature: -1}),
     findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {temperatureHumidity: 1}, {temperatureHumidity: -1}),
-    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {lightIntensity: 1}, {lightIntensity: +1}),
+    findWhereArduinoAndRangeWithProjectAndSort(arduinoId, from, to, {lightIntensity: 1}, {lightIntensity: -1}),
   ]);
 
   return {
@@ -58,7 +58,7 @@ export const getMax = async (arduinoId: string, from: Date, to: Date) => {
     humidity: data[3].humidity,
     ambienceTemperature: data[4].ambienceTemperature,
     temperatureHumidity: data[5].temperatureHumidity,
-    lightIntensity: data[6].lightIntensity,
+    lightIntensity: data[6].lightIntensity
   };
 }
 
