@@ -14,7 +14,7 @@ export const transformValues = data => {
   
   requestColumns.map(c => {
     if(columns.includes(c)) {
-      transformed[c] = mutator.mutate(MutantFactory.getMutant(c), transformed[c]);
+      transformed[c] = mutator.mutate(MutantFactory.getMutant(c), data[c]);
     }
   })
 
@@ -32,6 +32,7 @@ export const create = async (req, res, next) => {
     }
 
     const data = await transformValues(req.body);
+
     const measure = new Measure(data);
 
     save(measure, req.body.arduinoId);
