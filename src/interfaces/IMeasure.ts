@@ -1,6 +1,6 @@
 import { IArduinoModel } from '../models/Arduino';
 
-export const columns: any = [
+export const properties: any = [
   'uvRay',
   'rainfall',
   'sunCapability',

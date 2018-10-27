@@ -1,5 +1,6 @@
 import { IMutant } from './IMutant';
 
 export interface IMutator {
-  mutate(mutator: IMutant, value: number): number;
+  setMutant(mutant: IMutant);
+  mutate(value: number): number;
 }
