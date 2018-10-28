@@ -25,7 +25,7 @@ const errorHandlingMiddleware = (err, req, res, next) => {
 
     return res.status(err.httpCode || 500).json(toReturn);
   } else {
-    return res.json('ERRO')
+    return res.json(err);
   }
 }
 
