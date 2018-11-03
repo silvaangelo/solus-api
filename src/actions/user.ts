@@ -52,7 +52,7 @@ export const get = async (req, res, next) => {
     }
 
     const user = await retrieve({
-      id: req.params.id
+      _id: req.params.id
     });
 
     if(!user) {
@@ -78,9 +78,15 @@ export const login = async (req, res, next) => {
       }));
     }
 
-    const user = await retrieve({
+    const params = {
       email: req.body.email
-    });
+    }; 
+
+    const user = await retrieve(params);
+
+    if(!user) {
+      throw new ResourceNotFoundError(`Cannot found register '${JSON.stringify(params)}' for User.`);
+    }
 
     const passwordIsCorrect: boolean = await bcrypt.compare(req.body.password, user.password);
 

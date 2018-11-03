@@ -10,6 +10,7 @@ import RouteNotFoundMiddleware from './middlewares/not-found';
 import errorHandlingMiddleware from './middlewares/error-handling';
 import userRouter from './routes/userRouter';
 import * as cors from 'cors';
+import { createBaseUser } from './baseUser';
 
 const app = express();
 
@@ -25,5 +26,11 @@ app.use('/api/user', userRouter);
 
 app.use('*', RouteNotFoundMiddleware);
 app.use(errorHandlingMiddleware);
+
+createBaseUser()
+    .then(user => {
+        console.log('Base user created: ');
+        console.log(user);
+    });
 
 export default app;

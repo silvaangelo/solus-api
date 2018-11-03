@@ -35,13 +35,9 @@ export const save = async (user: IUserModel, id: string = null) => {
 export const list = async () => await User.find({}).exec()
 
 export const get = async (params: object) => {
-  let user = await User.findOne(params).exec()
+  let user = await User.findOne(params).exec();
 
-  if(!user) {
-    throw new ResourceNotFoundError(`Cannot found register '${JSON.stringify(params)}' for User.`);
-  }
-
-  return user
+  return user;
 }
 
 export const remove = async (id) => {
