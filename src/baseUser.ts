@@ -12,7 +12,7 @@ export const createBaseUser = async () => {
     const user = new User({
         name: 'Administrator',
         email: 'admin@solus.com.br',
-        password: await bcrypt.hash('4dmin@solu5', 12)
+        password: await bcrypt.hash('admin123', 12)
     });
 
     await save(user);
