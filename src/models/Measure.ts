@@ -15,7 +15,11 @@ export var MeasureSchema: Schema = new Schema({
   temperatureHumidity: Number,
   lightIntensity: Number,
   createdAt: Date
-})
+});
+
+MeasureSchema.virtual('id').get(function(this: IMeasureModel) {
+  return this._id;
+});
 
 MeasureSchema.pre<IMeasureModel>('save', function(next) {
   const now = new Date()

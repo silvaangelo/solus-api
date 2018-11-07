@@ -11,7 +11,11 @@ export var ArduinoSchema: Schema = new Schema({
     location: String,
     createdAt: Date,
     updatedAt: Date
-})
+});
+
+ArduinoSchema.virtual('id').get(function(this: IArduinoModel) {
+    return this._id;
+});
 
 ArduinoSchema.pre<IArduinoModel>('save', function(next) {
     const now = new Date()

@@ -13,6 +13,10 @@ export var UserSchema: Schema = new Schema({
   updatedAt: Date
 });
 
+UserSchema.virtual('id').get(function(this: IUserModel) {
+  return this._id;
+});
+
 UserSchema.pre<IUserModel>('save', function(next) {
   const now = new Date();
 
